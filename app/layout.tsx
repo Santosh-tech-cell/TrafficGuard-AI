@@ -3,8 +3,9 @@ import type { Metadata, Viewport } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'v0 App',
-  description: 'Created with v0',
+  title: 'FlowCast — AI Traffic Congestion Prediction',
+  description:
+    'Predict future traffic congestion for road segments with historical analysis, peak-time identification, location comparison, and prediction confidence.',
   generator: 'v0.app',
   icons: {
     icon: [
