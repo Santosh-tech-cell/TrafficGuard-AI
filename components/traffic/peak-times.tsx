@@ -1,9 +1,10 @@
 "use client"
 
 import { Bar, BarChart, CartesianGrid, Cell, XAxis, YAxis } from "recharts"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { ChartContainer, ChartTooltip } from "@/components/ui/chart"
 import { Badge } from "@/components/ui/badge"
+import { SpotlightCard } from "./effects"
 import type { HourlyStat, PeakWindow } from "@/lib/prediction"
 
 interface PeakTimesProps {
@@ -30,7 +31,7 @@ function PeakTooltip({ active, payload }: { active?: boolean; payload?: any[] })
 
 export function PeakTimes({ hourly, peaks, dayType }: PeakTimesProps) {
   return (
-    <Card>
+    <SpotlightCard>
       <CardHeader>
         <CardTitle>Peak-time identification</CardTitle>
         <CardDescription>
@@ -95,6 +96,6 @@ export function PeakTimes({ hourly, peaks, dayType }: PeakTimesProps) {
           )}
         </div>
       </CardContent>
-    </Card>
+    </SpotlightCard>
   )
 }

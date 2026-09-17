@@ -1,9 +1,10 @@
 "use client"
 
 import { Area, AreaChart, CartesianGrid, Line, ReferenceLine, XAxis, YAxis } from "recharts"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { ChartContainer, ChartTooltip } from "@/components/ui/chart"
 import { CongestionLegend } from "./congestion-legend"
+import { SpotlightCard } from "./effects"
 import type { PredictionPoint } from "@/lib/prediction"
 
 const chartConfig = {
@@ -42,7 +43,7 @@ export function PredictionChart({ data }: PredictionChartProps) {
   }))
 
   return (
-    <Card>
+    <SpotlightCard>
       <CardHeader className="flex flex-row items-start justify-between gap-4 space-y-0">
         <div>
           <CardTitle>24-hour congestion forecast</CardTitle>
@@ -81,6 +82,6 @@ export function PredictionChart({ data }: PredictionChartProps) {
           <CongestionLegend />
         </div>
       </CardContent>
-    </Card>
+    </SpotlightCard>
   )
 }

@@ -1,9 +1,10 @@
 "use client"
 
 import { useMemo } from "react"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { classifyCongestion, type TrafficRecord } from "@/lib/traffic-data"
 import { CongestionLegend } from "./congestion-legend"
+import { SpotlightCard } from "./effects"
 
 interface HistoricalViewProps {
   history: TrafficRecord[]
@@ -34,7 +35,7 @@ export function HistoricalView({ history }: HistoricalViewProps) {
   }, [history])
 
   return (
-    <Card>
+    <SpotlightCard>
       <CardHeader>
         <CardTitle>Historical traffic — last {days.length} days</CardTitle>
         <CardDescription>Hourly congestion heatmap processed from historical records</CardDescription>
@@ -70,6 +71,6 @@ export function HistoricalView({ history }: HistoricalViewProps) {
         </div>
         <CongestionLegend />
       </CardContent>
-    </Card>
+    </SpotlightCard>
   )
 }
